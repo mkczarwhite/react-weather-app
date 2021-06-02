@@ -1,14 +1,7 @@
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        Your travel destiny awaits... 
-     
-      </header>
-    </div>
-  );
+  return <div className="App">Your travel destiny awaits... </div> 
 }
 
 export default App;
