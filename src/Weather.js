@@ -3,10 +3,14 @@ import './Weather.css';
 import axios from 'axios';
 
 export default function Weather(){
-    const apiKey="4a26ac7808aaa734610b976e82bd1916";
-    let city="Hilo";
-    let apiUrl=`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
-    return <div className="weather">
+    const [ready, setReady]=useState(false);
+    const [temperature, setTemperature]=useState(null);
+    function handleResponse(response){
+        setTemperature(response.data.main.temp);
+        setReady(true);
+    }
+    if (ready){
+return <div className="weather">
         <form>
             <div className="row">
                 <div className="col-9">
@@ -32,7 +36,7 @@ export default function Weather(){
             <div className="col-6">
                 <div className="clearfix">
 <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="mostly sunny" className="float-left"/>
-<span className="temperature">80</span><span className="unit">ºF/ºC</span>
+<span className="temperature">{temperature}</span><span className="unit">ºF/ºC</span>
                 </div>
                 
             </div>
@@ -51,4 +55,13 @@ export default function Weather(){
             </div>
         </div>
     </div>;
+    } else{
+    const apiKey="4a26ac7808aaa734610b976e82bd1916";
+    let city="Hilo";
+    let apiUrl=`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+    return "loading...";
+    }
+    
+    
 }
