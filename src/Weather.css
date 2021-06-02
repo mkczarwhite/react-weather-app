@@ -2,7 +2,6 @@
   border: 1px solid #d9dce0;
   padding: 16px;
   margin: 30px auto;
-  max-width: 600px;
   border-radius: 4px;
 }
 
@@ -30,4 +29,19 @@
   line-height: 19px;
   color: black;
   list-style: none;
+}
+
+.weather img {
+  margin-right: 10px;
+}
+.weather .temperature {
+  font-weight: bold;
+  font-size: 36px;
+}
+
+.weather .unit {
+  font-size: 16px;
+  position: relative;
+  top: -14px;
+  margin-left: 5px;
 }
