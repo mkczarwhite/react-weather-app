@@ -4,7 +4,7 @@ import Weather from './Weather';
 function App() {
   return <div className="App">
     <div className="container">
-<Weather />
+<Weather defaultCity="Hilo" />
   <p>
     This project was coded by Michelle White and is available on <a href="https://github.com/mkczarwhite/react-weather-app" target="blank" rel="no-referrer">Github.</a></p>
     </div>
