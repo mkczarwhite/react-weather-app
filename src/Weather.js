@@ -36,7 +36,7 @@ return <div className="weather">
             <div className="col-6">
                 <div className="clearfix">
 <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="mostly sunny" className="float-left"/>
-<span className="temperature">{temperature}</span><span className="unit">ºF/ºC</span>
+<span className="temperature">{Math.round(temperature)}</span><span className="unit">ºF/ºC</span>
                 </div>
                 
             </div>
