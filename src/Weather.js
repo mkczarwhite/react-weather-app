@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './Weather.css';
 import axios from 'axios';
 import WeatherInfo from './WeatherInfo';
+import Loader from "react-loader-spinner";
 
 export default function Weather(props){
     const [weatherData, setWeatherData]=useState({ready:false});
@@ -53,7 +54,16 @@ return <div className="weather">
     </div>;
     } else{
         search();
-    return "loading...";
+    return <div className="loader">
+"loading...";
+   <Loader
+        type="Puff"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={3000} //3 secs
+      />
+    </div>
     }
     
     
