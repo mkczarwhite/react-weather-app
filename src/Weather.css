@@ -1,8 +1,9 @@
 .weather {
-  border: 1px solid #d9dce0;
+  border: 1px solid black;
   padding: 16px;
   margin: 30px auto;
   border-radius: 4px;
+  background-color: burlywood;
 }
 
 .weather form {
